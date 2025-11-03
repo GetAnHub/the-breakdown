@@ -1,30 +1,258 @@
+:root {
+    --color-bg: #ffffff;
+    --color-header: #111111;
+    --color-text: #222222;
+    --color-muted: #777777;
+    --color-accent: #333333;
+    --color-border: #dddddd;
+    --color-panel: #f5f5f5;
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-        font-family: "Noto Serif", serif;
-        font-weight: 400;
-        margin: 0;
-        background: #fff;
+    margin: 0;
+    font-family: "Noto Serif", serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+.site-header {
+    background: var(--color-header);
+    color: #ffffff;
+    padding: 2.5rem 1.5rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: clamp(2.2rem, 2.8vw + 1.5rem, 3.4rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.site-header p {
+    margin: 0.75rem auto 0;
+    max-width: 640px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.05rem;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+    gap: 2.5rem;
+    padding: 3rem clamp(1.5rem, 5vw, 5rem) 4rem;
+    align-items: start;
+}
+
+.layout-single {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.sidebar {
+    position: sticky;
+    top: 2rem;
+    background: var(--color-panel);
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    padding: 2rem 1.75rem;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.06);
+}
+
+.sidebar h2 {
+    margin: 0 0 1.5rem;
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+}
+
+.sidebar section + section {
+    margin-top: 2rem;
+}
+
+.sidebar p,
+.sidebar li {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.sidebar li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.5rem;
+    border-radius: 999px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.sidebar li a:hover,
+.sidebar li a:focus {
+    background: #e2e2e2;
+    color: #000000;
+}
+
+.posts {
+    display: grid;
+    gap: 2.5rem;
+}
+
+.post {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: 22px;
+    padding: 2.5rem;
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.08);
+    display: grid;
+    gap: 1.5rem;
+}
+
+.layout-single .post {
+    box-shadow: none;
+    border-radius: 18px;
+}
+
+.post-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-title {
+    margin: 0;
+    font-size: clamp(1.8rem, 1.2vw + 1.5rem, 2.4rem);
+    letter-spacing: 0.04em;
+}
+
+.post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    color: var(--color-muted);
+    font-size: 0.95rem;
+}
+
+.category {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    background: #eeeeee;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.post-content {
+    color: #2f2f2f;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+}
+
+.post-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.post-author {
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.post-share {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.post-share a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-border);
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.post-share a:hover,
+.post-share a:focus {
+    background: var(--color-header);
+    color: #ffffff;
+}
+
+.post-share svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    fill: currentColor;
+}
+
+@media (max-width: 960px) {
+    .layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
-    
-    h1 {
-        font-family: "Noto Serif", serif;
-        font-weight: 400;
-        font-style: normal;
+
+    .sidebar {
+        position: static;
     }
-    
-    p {
-        font-family: "Noto Serif", serif;
-        font-weight: 400;
+}
+
+@media (max-width: 600px) {
+    .site-header {
+        padding: 2rem 1.25rem 1.75rem;
     }
-    
-    a {
-        font-family: "Noto Serif", serif;
-        font-weight: 400;
-        text-decoration: none;
+
+    .post {
+        padding: 2rem;
     }
-    
-    /* Add a container for content with reasonable margins */
-    .container {
-        max-width: 700px;
-        margin: 40px auto;
-        padding: 0 24px;
+
+    .post-header,
+    .post-footer {
+        flex-direction: column;
+        align-items: flex-start;
     }
+
+    .post-share {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .post-share a {
+        width: 2.75rem;
+        height: 2.75rem;
+    }
+}
