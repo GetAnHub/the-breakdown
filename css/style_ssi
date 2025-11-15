@@ -1,0 +1,36 @@
+:root {
+    --bg-dark: #111213;
+    --fg-light: #d6d6d6;
+    --matrix-green: #39FF14;
+}
+
+body {
+    padding: 0 10px;
+    margin: 50px auto;
+    max-width: 650px;
+    background-color: var(--bg-dark);
+    color: var(--fg-light);
+    font-family:
+        "SF Mono", "SFMono-Regular", ui-monospace,
+        Menlo, Consolas, "Liberation Mono", monospace;
+
+    font-size: 0.9rem;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+}
+
+#maincontent {
+    max-width: 42em;
+    margin: 15 auto;
+
+}
+
+a {
+    color: var(--matrix-green);
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
