@@ -62,9 +62,42 @@ a:focus {
 }
 
 .layout-single {
-    grid-template-columns: minmax(0, 1fr);
-    max-width: 880px;
+    max-width: 720px;
     margin: 0 auto;
+    padding: 3rem clamp(1.5rem, 5vw, 4rem) 4rem;
+    display: block;
+}
+
+.layout-single article {
+    display: grid;
+    gap: 1.75rem;
+}
+
+.article-header {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.article-title {
+    margin: 0;
+    font-size: clamp(2rem, 1.6vw + 1.5rem, 2.8rem);
+    letter-spacing: 0.03em;
+}
+
+.article-date {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.article-body {
+    display: grid;
+    gap: 1.5rem;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+    color: #2f2f2f;
 }
 
 .sidebar {
@@ -129,11 +162,6 @@ a:focus {
     box-shadow: 0 22px 60px rgba(0, 0, 0, 0.08);
     display: grid;
     gap: 1.5rem;
-}
-
-.layout-single .post {
-    box-shadow: none;
-    border-radius: 18px;
 }
 
 .post-header {
