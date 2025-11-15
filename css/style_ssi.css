@@ -19,9 +19,9 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-#maincontent {
+.content {
     max-width: 42em;
-    margin: 15 auto;
+    margin: 15px auto;
 
 }
 
